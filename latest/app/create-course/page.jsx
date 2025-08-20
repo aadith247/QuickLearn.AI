@@ -16,7 +16,7 @@ import uuid4 from 'uuid4';
 import { courseList } from '../configs/Schema';
 import { useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
-import { getVideos } from '../configs/service';
+import { getVideos } from '@/app/configs/service';
 function page() {
   
     const stepperOptions=[{
