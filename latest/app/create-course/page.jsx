@@ -4,7 +4,7 @@ import React from 'react'
 import { useState,useContext,useEffect } from 'react';
 import Header from '../dashboard/_components/Header'
 import { HiSquares2X2,HiLightBulb ,HiClipboardDocumentCheck } from "react-icons/hi2";
-import { Button } from '@/components/ui/button';
+import { Button } from '../../components/ui/button';
 import { list } from '../_shared/CategoryList';
 import Choice from './_components/choice';
 import TopicDesc from './_components/TopicDesc';
