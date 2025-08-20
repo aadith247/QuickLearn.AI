@@ -8,7 +8,7 @@ import ChapterList from './Components/chapterList';
 import EditCourse from './Components/EditCourse';
 import { GenerateCourseLayout_AI } from '@/appconfigs/AIModel';
 import { GenerateChapterContent_AI } from '@/app/configs/AIModel';
-import { Button } from '@.components/ui/button';
+import { Button } from '@/components/ui/button';
 import LoadingDialog from '../_components/LoadingDialog';
  import { getVideos } from '@/app/configs/service';
 
