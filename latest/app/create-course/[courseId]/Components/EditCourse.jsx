@@ -6,11 +6,11 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '../../../../components/ui/input';
+} from '@/components/ui/input';
 
-import { Input } from '../../../../components/ui/input';
+import { Input } from '@/components/ui/input';
 
-import { Button } from '../../../../components/ui/button';
+import { Button } from '@/components/ui/button';
 
 function EditCourse({ initialTitle, initialDescription, open, onOpenChange, onSave, courseId }) {
   const [title, setTitle] = useState(initialTitle );
