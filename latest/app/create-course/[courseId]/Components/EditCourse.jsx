@@ -8,9 +8,9 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 
-import { Input } from '@/components/ui/input';
+import { Input } from '../../../../components/ui/input';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '../../../../components/ui/button'';
 
 function EditCourse({ initialTitle, initialDescription, open, onOpenChange, onSave, courseId }) {
   const [title, setTitle] = useState(initialTitle );
