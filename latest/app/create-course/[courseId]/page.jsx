@@ -6,17 +6,15 @@ import { useParams } from 'next/navigation';
 import CourseBasicInfo from './Components/courseBasicInfo';
 import ChapterList from './Components/chapterList';
 import EditCourse from './Components/EditCourse';
-import { GenerateCourseLayout_AI } from '@/appconfigs/AIModel';
+import { GenerateCourseLayout_AI } from '@/app/configs/AIModel';
 import { GenerateChapterContent_AI } from '@/app/configs/AIModel';
 import { Button } from '@/components/ui/button';
 import LoadingDialog from '../_components/LoadingDialog';
- import { getVideos } from '@/app/configs/service';
-
+import { getVideos } from '@/app/configs/service';
 export default function CourseLayout() {
   const params = useParams();
   const courseId = Array.isArray(params?.courseId) ? params.courseId[0] : params?.courseId;
   const { isLoaded, isSignedIn } = useUser();
-
   const [course, setCourse] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);

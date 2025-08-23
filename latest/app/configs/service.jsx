@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const getVideos = async (query) => {
   try {
- //..for client side accessing
+    // Use NEXT_PUBLIC_ prefix for client-side access
     const apiKey = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
     
     if (!apiKey) {

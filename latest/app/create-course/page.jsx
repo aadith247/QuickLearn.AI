@@ -16,7 +16,7 @@ import uuid4 from 'uuid4';
 import { courseList } from '../configs/Schema';
 import { useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
-import { getVideos } from '@/app/configs/service';
+import { getVideos } from '../configs/service';
 function page() {
   
     const stepperOptions=[{
@@ -121,10 +121,10 @@ const saveLayoutInDb = async (courseLayout) => {
         return <div key={key}>
         <div className="flex  gap-4 items-center">
         <div key={key} className="flex flex-col items-center ">
-        <div className={`text-2xl text-white bg-gray-300 rounded-full p-4 ${activeIndex>=key && 'bg-indigo-500'}`}>{item.icon}</div>
+        <div className={`text-2xl text-white bg-gray-300 rounded-full p-4 ${activeIndex>=key && 'bg-indigo-600'}`}>{item.icon}</div>
         <h1 className="text-sm text-pretty font-bold mt-1 font-italic ">{item.name}</h1>
         </div>
-        {key!=stepperOptions.length-1 && (<div className={`h-1 w-[50px] mb-3 rounded-full md:w-[90px] lg:w-[170px] ${activeIndex>key ?  'bg-indigo-500' : 'bg-gray-200'} ` }></div>)}
+        {key!=stepperOptions.length-1 && (<div className={`h-1 w-[50px] mb-3 rounded-full md:w-[90px] lg:w-[170px] ${activeIndex>key ?  'bg-indigo-600' : 'bg-gray-200'} ` }></div>)}
         </div>
         <div className="flex gap-4 mt-4">
         </div>
@@ -141,13 +141,13 @@ const saveLayoutInDb = async (courseLayout) => {
      <div className="px-5 md:px-10 lg:px-30 ">
     
         <div className="flex justify-between mt-10">
-            <Button disabled={activeIndex==0} className="bg-indigo-500" onClick={()=>{setActiveIndex(activeIndex-1)}}>Prev</Button>
+            <Button disabled={activeIndex==0} className="bg-indigo-600" onClick={()=>{setActiveIndex(activeIndex-1)}}>Prev</Button>
             {
             activeIndex != stepperOptions.length-1 ? 
-               (<Button disabled={checkStatus()} onClick={() => {if (activeIndex < stepperOptions.length) {setActiveIndex(activeIndex + 1);}}}className="bg-indigo-500">Next</Button>)
+               (<Button disabled={checkStatus()} onClick={() => {if (activeIndex < stepperOptions.length) {setActiveIndex(activeIndex + 1);}}}className="bg-indigo-600">Next</Button>)
              :   (
       
-             <Button disabled={checkStatus()} onClick={()=>{GenerateCourseLayout()}}  className="bg-indigo-500">Generate</Button>
+             <Button disabled={checkStatus()} onClick={()=>{GenerateCourseLayout()}}  className="bg-indigo-600">Generate</Button>
              )
              }
 

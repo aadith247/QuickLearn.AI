@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react';
-import { useUser } from '@clerk/nextjs';
+import { useUser, SignOutButton } from '@clerk/nextjs';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Home, Layers, Shield, LogOut } from 'lucide-react';
@@ -18,7 +18,7 @@ export default function DashboardLayout({ children }) {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="flex">
-
+        {/* Sidebar */}
         <div className="w-65 bg-white shadow-sm min-h-screen border-r border-gray-200">
           <div className="p-6">
             {/* Logo */}
@@ -50,10 +50,54 @@ export default function DashboardLayout({ children }) {
               })}
               
 
-              <button className="flex items-center px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 w-full transition-colors">
-                <LogOut className="w-5 h-5 mr-3" />
-                Logout
-              </button>
+              <SignOutButton signOutCallback={() => {
+                // Clear all localStorage data
+                localStorage.clear();
+                
+                // Clear sessionStorage as well
+                sessionStorage.clear();
+                
+                // Clear Clerk-related cookies and storage
+                document.cookie.split(";").forEach(function(c) { 
+                  document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); 
+                });
+                
+                // Clear any remaining Clerk data with more specific targeting
+                if (typeof window !== 'undefined') {
+                  // Clear any Clerk-specific storage keys (including those that start with __clerk_)
+                  Object.keys(localStorage).forEach(key => {
+                    if (key.includes('clerk') || key.startsWith('__clerk_') || key.startsWith('_clerk_') || key.includes('__clerk')) {
+                      localStorage.removeItem(key);
+                      console.log('Removed Clerk localStorage key:', key);
+                    }
+                  });
+                  
+                  // Clear any Clerk-specific session storage
+                  Object.keys(sessionStorage).forEach(key => {
+                    if (key.includes('clerk') || key.startsWith('__clerk_') || key.startsWith('_clerk_') || key.includes('__clerk')) {
+                      sessionStorage.removeItem(key);
+                      console.log('Removed Clerk sessionStorage key:', key);
+                    }
+                  });
+                  
+                  // Force remove specific Clerk keys if they still exist
+                  if (localStorage.getItem('__clerk_environment')) {
+                    localStorage.removeItem('__clerk_environment');
+                    console.log('Force removed __clerk_environment');
+                  }
+                  if (localStorage.getItem('clerk_telemetry_throttler')) {
+                    localStorage.removeItem('clerk_telemetry_throttler');
+                    console.log('Force removed clerk_telemetry_throttler');
+                  }
+                }
+                
+                console.log('All storage data cleared on logout');
+              }}>
+                <button className="flex items-center px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 w-full transition-colors">
+                  <LogOut className="w-5 h-5 mr-3" />
+                  Logout
+                </button>
+              </SignOutButton>
             </nav>
           </div>
         </div>

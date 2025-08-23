@@ -6,7 +6,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/input';
+} from '@/components/ui/dialog';
 
 import { Input } from '@/components/ui/input';
 

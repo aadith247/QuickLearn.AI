@@ -40,7 +40,7 @@ function Siderbar() {
         
             {menu.map((item,key)=>{
                return <div key={key}>
-                <Link href={item.path}>
+                <Link href={item.path} >
                     <div className={`flex gap-3 items-center text-gray-600 p-3 hover:text-black hover:bg-gray-200  rounded-lg hover:cursor-pointer ${item.path==path && 'bg-gray-200 text-black'} `}>
                        <div className="text-lg ">{item.icon}</div> 
                        <div className="text-lg text-pretty ">{item.name}</div> 
