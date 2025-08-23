@@ -1,4 +1,6 @@
-<img width="2844" height="1524" alt="Screenshot 2025-08-23 at 10 29 28 AM" src="https://github.com/user-attachments/assets/d68e5b4a-9ad4-4bc3-ac6e-6da8bcf1dc18" />
+# QuickLearn.AI
+QuickLearn.AI is an AI-powered learning platform that enables users to create personalized courses, generate detailed chapter content, and explore projects built by others. Built with [Next.js](https://nextjs.org), Clerk authentication, Drizzle ORM, and Google Gemini AI, QuickLearn.AI delivers a modern, interactive educational experience.
+
 <img width="2866" height="1552" alt="Screenshot 2025-08-23 at 10 29 53 AM" src="https://github.com/user-attachments/assets/e4db2b92-baac-4273-a168-df881495eaf7" />
 <img width="2880" height="1630" alt="Screenshot 2025-08-23 at 10 30 19 AM" src="https://github.com/user-attachments/assets/b9a8954c-f43d-4d48-ba7d-ad52c41de08b" />
 <img width="2878" height="1702" alt="Screenshot 2025-08-23 at 10 30 23 AM" src="https://github.com/user-attachments/assets/d5d4ee53-b234-44ed-b2a5-37fd006cf75f" />
@@ -8,9 +10,8 @@
 <img width="2870" height="1622" alt="Screenshot 2025-08-23 at 10 31 20 AM" src="https://github.com/user-attachments/assets/e22bd60d-87a9-4706-ac35-483b0f35b1c4" />
 <img width="2874" height="1642" alt="Screenshot 2025-08-23 at 10 31 31 AM" src="https://github.com/user-attachments/assets/f9981253-da61-45a3-b1ba-f4b63903ef63" />
 <img width="2840" height="1634" alt="Screenshot 2025-08-23 at 10 31 35 AM" src="https://github.com/user-attachments/assets/e108a534-7c88-4673-bbbd-b770b8adffea" />
-# QuickLearn.AI
 
-QuickLearn.AI is an AI-powered learning platform that enables users to create personalized courses, generate detailed chapter content, and explore projects built by others. Built with [Next.js](https://nextjs.org), Clerk authentication, Drizzle ORM, and Google Gemini AI, QuickLearn.AI delivers a modern, interactive educational experience.
+
 
 ## Features
 
