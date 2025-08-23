@@ -37,3 +37,10 @@ QuickLearn.AI is an AI-powered learning platform that enables users to create pe
    ```sh
    npm install
    ```
+
+     ```sh
+   cd latest && npm run dev
+   ```
+
+     
+     
