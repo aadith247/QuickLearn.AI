@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@radix-ui/react-visually-hidden": "^1.2.3",
+    "react-markdown": "^10.1.0",
+    "typescript": "^5.8.3"
+  }
+}
