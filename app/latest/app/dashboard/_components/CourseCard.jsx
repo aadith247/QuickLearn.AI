@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { MoreVertical } from 'lucide-react';
 
 const CourseCard = ({ 
@@ -9,9 +10,10 @@ const CourseCard = ({
   showProgress = false, 
   showUserInfo = false, 
   showMoreOptions = false,
-  linkTo = null 
-}) =>
-  {
+  linkTo,
+  isExploreCourse = false, // New prop to identify explore courses
+}) => {
+  const router = useRouter();
   const {
     id,
     courseId,
@@ -27,8 +29,14 @@ const CourseCard = ({
   const actualChaptersCount = chaptersCount || 0;
   const progressPercentage = actualChaptersCount > 0 ? ((completedChapters || 0) / actualChaptersCount) * 100 : 0;
 
+  const handleExploreCourseClick = (e) => {
+    e.preventDefault();
+    // For explore courses, redirect to the finish page to view the course
+    router.push(`/create-course/${courseId}/finish`);
+  };
+
   const CardContent = (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer">
 
       <div className="relative h-48 bg-gradient-to-br from-indigo-500 to-indigo-600">
         <div className="absolute inset-0 flex items-center justify-center">
@@ -50,7 +58,6 @@ const CourseCard = ({
           </div>
         )}
         
-
         <div className="absolute top-3 right-3">
           <span className={`px-2 py-1 text-xs font-medium rounded-full ${
             level === 'Beginner' 
@@ -62,6 +69,7 @@ const CourseCard = ({
             {level || 'Beginner'}
           </span>
         </div>
+
         {showMoreOptions && (
           <div className="absolute bottom-3 right-3">
             <button className="text-white hover:text-gray-200">
@@ -97,8 +105,9 @@ const CourseCard = ({
             </div>
           </div>
         )}
+
         {showUserInfo && (
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between mt-3">
             <div className="flex items-center">
               <div className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-semibold mr-2">
                 {userName?.charAt(0) || 'U'}
@@ -111,16 +120,22 @@ const CourseCard = ({
     </div>
   );
 
-  // If linkTo is provided, wrap in Link component
-  if (linkTo) {
+  // For explore courses, handle click manually to redirect to finish page
+  if (isExploreCourse) {
     return (
-      <Link href={linkTo} className="block group">
+      <div onClick={handleExploreCourseClick} className="block group">
         {CardContent}
-      </Link>
+      </div>
     );
   }
 
-  return CardContent;
+  // For user's own courses, use the default Link behavior
+  const targetLink = linkTo || `/create-course/${courseId}/finish`;
+  return (
+    <Link href={targetLink} className="block group">
+      {CardContent}
+    </Link>
+  );
 };
 
 export default CourseCard;
