@@ -64,45 +64,7 @@ export const Footer = () => {
         </div>
 
         {/* Bottom section */}
-        <motion.div 
-          className="border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <div className="flex items-center space-x-2 text-gray-500 text-sm mb-4 md:mb-0">
-            <span>© 2024 QuickLearn. Made with</span>
-            <motion.div
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >
-              <Heart className="w-4 h-4 text-red-500 fill-current" />
-            </motion.div>
-            <span>by the QuickLearn team</span>
-          </div>
-          
-          <div className="flex items-center space-x-6">
-            <Link href="/sign-up">
-              <motion.button
-                className="px-6 py-2 bg-indigo-600 text-white font-medium rounded-lg text-sm transition-all duration-200 hover:bg-indigo-700 shadow-sm"
-                whileHover={{ scale: 1.02, y: -1 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Get Started
-              </motion.button>
-            </Link>
-            
-            <motion.button
-              onClick={scrollToTop}
-              className="p-2 bg-gray-100 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-200 transition-all duration-200"
-              whileHover={{ scale: 1.1, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <ArrowUp className="w-5 h-5" />
-            </motion.button>
-          </div>
-        </motion.div>
+     
       </div>
     </footer>
   )

@@ -97,7 +97,7 @@ export const Hero = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <span className="flex items-center gap-2">
+                <span className="flex items-center gap-2 hover:cursor-pointer">
                   Get Started Free
                   <motion.svg 
                     className="w-5 h-5 group-hover:translate-x-1 transition-transform"
@@ -113,7 +113,7 @@ export const Hero = () => {
             
             <Link href="/sign-in">
               <motion.button
-                className="px-8 py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg text-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200"
+                className="px-8 py-4 border-2 hover:cursor-pointer border-gray-300 text-gray-700 font-semibold rounded-lg text-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >

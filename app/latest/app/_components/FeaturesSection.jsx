@@ -17,14 +17,8 @@ const features = [
   {
     icon: Brain,
     title: "AI-Powered Generation",
-    description: "Advanced AI algorithms create comprehensive, personalized courses tailored to your learning style and goals.",
+    description: "AI creates comprehensive, personalized courses tailored to your learning style and goals.",
     color: "bg-indigo-100 text-indigo-600"
-  },
-  {
-    icon: Target,
-    title: "Personalized Learning",
-    description: "Adaptive content that evolves with your progress, ensuring optimal learning outcomes.",
-    color: "bg-blue-100 text-blue-600"
   },
   {
     icon: Zap,
@@ -35,21 +29,15 @@ const features = [
   {
     icon: BookOpen,
     title: "Rich Content",
-    description: "Comprehensive materials including explanations, examples, and interactive elements.",
+    description: "Comprehensive materials including explanations, examples, and relevant youtube videos.",
     color: "bg-emerald-100 text-emerald-600"
   },
   {
     icon: Users,
-    title: "Community Driven",
-    description: "Learn from and share with a community of learners and educators worldwide.",
+    title: "Explore ",
+    description: "Explore and learn from other users' courses.",
     color: "bg-purple-100 text-purple-600"
   },
-  {
-    icon: TrendingUp,
-    title: "Progress Tracking",
-    description: "Monitor your learning journey with detailed analytics and achievement milestones.",
-    color: "bg-rose-100 text-rose-600"
-  }
 ]
 
 const containerVariants = {
@@ -87,16 +75,7 @@ export const FeaturesSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 rounded-full border border-indigo-200 mb-6"
-            initial={{ scale: 0.8 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <Sparkles className="w-5 h-5 text-indigo-600" />
-            <span className="text-indigo-700 text-sm font-medium">Why Choose QuickLearn</span>
-          </motion.div>
+       
           
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Powerful Features for
@@ -149,22 +128,13 @@ export const FeaturesSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-indigo-50 rounded-full border border-indigo-200 mb-6">
-            <Globe className="w-5 h-5 text-indigo-600" />
-            <span className="text-indigo-700 text-sm">Join thousands of learners worldwide</span>
-          </div>
+         
           
           <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
             Ready to transform your learning experience? Start your AI-powered learning journey today.
           </p>
           
-          <motion.button
-            className="px-8 py-4 bg-indigo-600 text-white font-semibold rounded-lg text-lg shadow-sm hover:bg-indigo-700 transition-all duration-200"
-            whileHover={{ scale: 1.02, y: -1 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            Start Learning Now
-          </motion.button>
+      
         </motion.div>
       </div>
     </section>

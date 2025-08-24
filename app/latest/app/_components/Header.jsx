@@ -48,8 +48,9 @@ function Header() {
             <div className="sm:flex sm:gap-4">
               <Link href="/sign-in">
                 <motion.button
-                  className="px-6 py-2.5 text-gray-700 font-medium transition-all duration-200 hover:text-gray-900"
+                  className="px-6 py-2.5 text-gray-700 font-medium transition-all duration-200 hover:cursor-pointer hover:text-gray-900"
                   whileHover={{ scale: 1.02 }}
+
                   whileTap={{ scale: 0.98 }}
                 >
                   Login
@@ -58,7 +59,7 @@ function Header() {
 
               <Link href="/sign-up">
                 <motion.button
-                  className="hidden sm:block px-6 py-2.5 bg-indigo-600 text-white font-medium rounded-lg transition-all duration-200 hover:bg-indigo-700 shadow-sm"
+                  className="hidden sm:block px-6 py-2.5 hover:cursor-pointer bg-indigo-600 text-white font-medium rounded-lg transition-all duration-200 hover:bg-indigo-700 shadow-sm"
                   whileHover={{ scale: 1.02, y: -1 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -110,7 +111,7 @@ function Header() {
                 <li className="pt-4 border-t border-gray-200">
                   <Link href="/sign-up">
                     <motion.button
-                      className="w-full px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg transition-all duration-200"
+                      className="w-full hover:cursor-pointer px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg transition-all duration-200"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       onClick={() => setIsMobileMenuOpen(false)}
