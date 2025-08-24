@@ -161,7 +161,7 @@ export default function ExplorePage() {
             showProgress={false}
             showUserInfo={true}
             showMoreOptions={true}
-            linkTo={null} // No link for explore courses
+            isExploreCourse={true} // This will make the card redirect to finish page
           />
         ))}
       </div>
