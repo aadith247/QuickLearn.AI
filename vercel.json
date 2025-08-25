@@ -1,9 +1,0 @@
-{
-  "redirects": [
-    {
-      "source": "/:path*",
-      "destination": "https://quick-learn-ai-ynxs.vercel.app/:path*",
-      "permanent": true
-    }
-  ]
-}
