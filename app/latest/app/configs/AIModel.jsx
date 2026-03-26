@@ -8,7 +8,7 @@ export const GenerateCourseLayout_AI = {
   history,
   async sendMessage(message, options = {}) {
     const {
-      model = 'gemini-2.0-flash',
+      model = 'gemini-2.5-flash',
       json = false
     } = options;
 
