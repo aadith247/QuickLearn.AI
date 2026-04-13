@@ -328,36 +328,45 @@ export default function FinishPage()
                         </div>
                       )}
                       
-                      {topic.codeExamples && topic.codeExamples.length > 0 && (
-                        <div className="mb-4">
-                          <h4 className="text-lg font-medium text-gray-800 mb-2">Code Example:</h4>
-                          {topic.codeExamples.map((codeExample, codeIndex) => {
-                            let codeText = '';
-                            let language = '';
-                            if (typeof codeExample === 'string') {
-                              codeText = codeExample;
-                            } else if (codeExample && typeof codeExample === 'object') {
-                              codeText = codeExample.code || codeExample.content || JSON.stringify(codeExample);
-                              language = codeExample.language || '';
-                            } else {
-                              codeText = String(codeExample);
-                            }
-                            
-                            return (
-                              <div key={codeIndex} className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto border border-gray-700">
-                                {language && (
-                                  <div className="text-xs text-gray-400 mb-2 font-mono">
-                                    {language}
-                                  </div>
-                                )}
-                                <pre className="text-sm">
-                                  <code>{codeText}</code>
-                                </pre>
-                              </div>
-                            );
-                          })}
-                        </div>
-                      )}
+                  
+                        {topic.codeExamples && (
+  <div className="mb-4">
+    <h4 className="text-lg font-medium text-gray-800 mb-2">Code Example:</h4>
+    {Array.isArray(topic.codeExamples) ? (
+      topic.codeExamples.map((codeExample, codeIndex) => {
+        let codeText = '';
+        let language = '';
+        if (typeof codeExample === 'string') {
+          codeText = codeExample;
+        } else if (codeExample && typeof codeExample === 'object') {
+          codeText = codeExample.code || codeExample.content || JSON.stringify(codeExample);
+          language = codeExample.language || '';
+        } else {
+          codeText = String(codeExample);
+        }
+        
+        return (
+          <div key={codeIndex} className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto border border-gray-700">
+            {language && (
+              <div className="text-xs text-gray-400 mb-2 font-mono">
+                {language}
+              </div>
+            )}
+            <pre className="text-sm">
+              <code>{codeText}</code>
+            </pre>
+          </div>
+        );
+      })
+    ) : (
+      <div className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto border border-gray-700">
+        <pre className="text-sm">
+          <code>{typeof topic.codeExamples === 'string' ? topic.codeExamples : JSON.stringify(topic.codeExamples)}</code>
+        </pre>
+      </div>
+    )}
+  </div>
+)}
                       
                       {topic.studyResources && topic.studyResources.length > 0 && (
                         <div className="mt-4">
